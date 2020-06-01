@@ -8,6 +8,7 @@ import Register from "./pages/Register";
 import Home from "./pages/Home";
 
 import PageLayout from "./components/PageLayout";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   return (
@@ -29,6 +30,11 @@ function App() {
             component={(props) => <Login {...props} manoPropsas="value1" />}
           />
           <Route exact path="/register" component={Register} />
+          <PrivateRoute exact path="/content">
+            <div>
+              <p>Here Will Be Content!</p>
+            </div>
+          </PrivateRoute>
           <Route path="*">
             <div>404 Page not found</div>
           </Route>

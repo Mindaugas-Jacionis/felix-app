@@ -1,11 +1,12 @@
 import React from "react";
-import { Link, useHistory, useLocation } from "react-router-dom";
+import { Link, useHistory, useLocation, withRouter } from "react-router-dom";
 
-function App() {
+function App(/* props */) {
   const history = useHistory();
   const location = useLocation();
 
   console.log("Home", { history, location });
+  // console.log("Home", props);
 
   return (
     <div className="App">
@@ -31,4 +32,5 @@ function App() {
   );
 }
 
-export default App;
+// export default withRouter(App);
+export default withRouter(App);

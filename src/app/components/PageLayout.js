@@ -8,7 +8,7 @@ function PageLayout({ children }) {
       <main>{children}</main>
       <Switch>
         {["/login", "/register"].map((path) => (
-          <Route exact path={path}>
+          <Route key={path} exact path={path}>
             <footer>Footer Login</footer>
           </Route>
         ))}
